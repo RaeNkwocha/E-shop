@@ -11,9 +11,7 @@ import bone from "./bone.png"
 import chicken from "./chicken.png"
 import ColorTextFields from './Search'
 import "./splash.css"
-import Bottomnav from '../Bottomnav'
 import Products from '../components/Products/Products'
-// import Products from '../Components/Products/Products'
 
 
 function Shop() {
@@ -117,7 +115,7 @@ function Shop() {
 
     return (
         <>
-        <div div style={{display:"flex",margin:"auto",justifyContent:"center",width:"100%"}}>
+        <div  style={{display:"flex",margin:"auto",justifyContent:"center",width:"100%"}}>
             <div className="load-screen" > 
             <div className="fruit">
               <img src={fruit} alt=""></img>
@@ -218,7 +216,7 @@ function Shop() {
                
                 {/* <Bottomnav></Bottomnav> */}
 
-              <Bottomnav></Bottomnav>
+              
             </div> 
            
         </div>

@@ -14,12 +14,12 @@ import Shop from '../Splash/Shop'
 function Splash() {
     const [loading, setLoading]=useState(false)
     const [input, setInput]=useState("")
-    useEffect(()=>{
-        setLoading(true)
-        setTimeout(()=>{
-            setLoading(false)
-        },5000)
-    },[])
+    // useEffect(()=>{
+    //     setLoading(true)
+    //     setTimeout(()=>{
+    //         setLoading(false)
+    //     },5000)
+    // },[])
     let fruits=[
         {
             name:"Organic Bannas",
@@ -118,16 +118,10 @@ function Splash() {
     }
     return (
         <div style={{display:"flex",margin:"auto",justifyContent:"center",width:"100%"}}>
-            {loading? <div className="spalsh-screen">
-                <div className="logo"> 
-                <img src={group} alt=""></img>
-                </div>
-           
-            </div>:<Shop></Shop>
+            <Shop></Shop>
 
             
-            }
-           
+            
         </div>
     )
 }

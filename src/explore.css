@@ -22,7 +22,7 @@ section .new-products div:nth-child(4n+2){
 section div .new-products :nth-child(4n+3){
     background: blue;
 } */
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
     .new-products{
         display: flex;
       flex-wrap: wrap;
@@ -32,7 +32,7 @@ section div .new-products :nth-child(4n+3){
     
         
     }
-}
+} */
 .new-display{
     /* display: flex;
   flex-wrap: wrap;
@@ -44,7 +44,7 @@ section div .new-products :nth-child(4n+3){
   grid-template-columns:200px 250px;
   grid-auto-rows: minmax(150px,auto);
   grid-gap: 20px;
-  margin-left: 50px;
+  margin-left: 70px;
   margin-top: 20px;
   margin-bottom: 80px;
   

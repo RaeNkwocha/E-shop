@@ -1,5 +1,5 @@
 import { Tabs } from '@material-ui/core';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import Explore from './Explore';
 import './nav.css';
@@ -9,11 +9,14 @@ import Shop from './Splash/Shop';
 // import { faSearch } from '@fortawesome/free-solid-svg-icons';
 function Bottomnav() {
             const [tab, setTab]=useState(1)
-            
+           
             const toggle=(index)=>{
                 setTab(index)
                 // console.log(index)
             }
+    //          useEffect(()=>{
+    //              toggle()
+    // },[toggle])
     return (
         <div>
             <div className="nav">

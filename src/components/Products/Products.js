@@ -1,12 +1,13 @@
 import React from 'react'
 import "./products.css"
 import cart from "./cart.png"
+import TransitionsModal from '../../Modal/Modal'
 
 function Products({name,description,price,image}) {
     
     return (
         <>
-          
+          <TransitionsModal name={name} description={description} price={price} image={image}>
                 <div className="container">
                         <div className="image-holder">
                             <img src={image}></img>
@@ -29,6 +30,7 @@ function Products({name,description,price,image}) {
                         </div>
                         
                 </div>
+          </TransitionsModal>
 
         </>
     )

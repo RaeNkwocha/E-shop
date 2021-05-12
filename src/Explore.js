@@ -43,7 +43,7 @@ function Explore() {
             image:""
         },
         {
-            name:"fruits & Vegetables",
+            name:"fruits and Vegetables",
             image:""
         }
     ]

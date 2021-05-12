@@ -1,17 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 function Newproducts({name,image}) {
     return (
-        <div className="new">
-            <article className="new-products">
+        <>
+        <section className="new">
+            <div className="new-products">
                 <div className="img-container">
                     <img src={image}></img>
                 </div>
                 <h5 className="explore">{name}</h5>
 
-            </article>
-        </div>
+            </div>
+        </section>
+       
+        </>
     )
 }
 

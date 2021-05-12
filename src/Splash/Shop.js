@@ -18,24 +18,27 @@ function Shop() {
     const [input, setInput]=useState("")
     let fruits=[
         {
+            id:1,
             name:"Organic Bannas",
             image:Bannas,
             price:"$4.99",
             description:"7pcs priceg"
         },
         {
+            id:2,
             name:"Red Apple",
             image:Apples,
             price:"$4.99",
             description:"7pcs priceg"
         },
         {
+            id:3,
             name:"Red Apple",
             image:Apples,
             price:"$4.99",
             description:"7pcs priceg"
         },
-        {
+        {    id:4,
             name:"Red Apple",
             image:Apples,
             price:"$4.99",
@@ -51,24 +54,27 @@ function Shop() {
      }
      let best=[
          {
+            id:5,
             name:"Strawberries",
             image:berry,
             price:"$4.99",
             description:"7pcs priceg"
          },
          {
+            id:6,
             name:"Cashew Nuts",
             image:Nuts,
             price:"$4.99",
             description:"7pcs priceg"
          },
          {
+            id:7,
             name:"Tomatoes",
             image:Bannas,
             price:"$4.99",
             description:"7pcs priceg"
          },
-         {
+         {    id:8,
             name:"Pear",
             image:Bannas,
             price:"$4.99",
@@ -83,24 +89,28 @@ function Shop() {
      }
      let groceries=[
         {
+            id:9,
            name:"Beef bone",
            image:bone,
            price:"$4.99",
            description:"7pcs priceg"
         },
         {
+            id:10,
            name:"Broiller chicken",
            image:chicken,
            price:"$4.99",
            description:"7pcs priceg"
         },
         {
+            id:11,
            name:"Strawberries",
            image:berry,
            price:"$4.99",
            description:"7pcs priceg"
         },
         {
+            id:12,
            name:"Strawberries",
            image:berry,
            price:"$4.99",
@@ -135,10 +145,12 @@ function Shop() {
                 {/* <div className="overflow">  */}
                 <div className="product-display">
                     {fruits.map((fruit)=>{
-                        return  <Products name={fruit.name} 
+                        return  <Products key={fruit.id} 
+                                          name={fruit.name} 
                                           price={fruit.price}
                                           description={fruit.description}
                                           image={fruit.image}
+                                          id={fruit.id}
                         
                         
                         >
@@ -158,10 +170,11 @@ function Shop() {
                 </section>
                 <div className="product-display">
                         {best.map((item)=>{
-                            return <Products name={item.name}
+                            return <Products key={item.id} name={item.name}
                                              price={item.price}
                                              description={item.description}
                                              image={item.image}
+                                             id={item.id}
                             
                             
                             >
@@ -201,10 +214,11 @@ function Shop() {
                 </section>
                 <div className="product-display">
                     {groceries.map((grocery)=>{
-                        return <Products name={grocery.name}
+                        return <Products key={grocery.id} name={grocery.name}
                                          price={grocery.price}
                                          description={grocery.description}
                                          image={grocery.image}
+                                         id={grocery.id}
                        
                        
                        >

@@ -11,7 +11,7 @@ function Products({name,description,price,image,id}) {
           {/* <TransitionsModal name={name} description={description} price={price} image={image}> */}
                
                <div key={id} className="container">
-               <Link style={{textDecoration:"none",listStyle:"none",color:"black"}} to={"/shop/"+id+"/"+name}>
+               <Link style={{textDecoration:"none",listStyle:"none",color:"black"}} to={"/user/"+id+"/"+price+"/"+name+"/"+description+"/"}>
 
                         <div className="image-holder">
                             <img src={image}></img>

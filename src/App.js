@@ -35,7 +35,7 @@ function App() {
 
          <Route path="/" exact component={Splash}></Route>
          <Route path="/shop" exact  component={Shop}></Route>
-         <Route path="/user/:id/:price/:name/:description/"><User></User></Route>
+         {/* <Route path="/user/:id/:price/:name/:description/"><User></User></Route> */}
         <Route path="/explore" component={Explore}></Route>
  
       </Switch>

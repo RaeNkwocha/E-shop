@@ -8,7 +8,7 @@ function Products({name,description,price,image,id}) {
     
     return (
         <>
-          {/* <TransitionsModal name={name} description={description} price={price} image={image}> */}
+          <TransitionsModal name={name} description={description} price={price} image={image}>
                
                <div key={id} className="container">
                <Link style={{textDecoration:"none",listStyle:"none",color:"black"}} to={"/user/"+id+"/"+price+"/"+name+"/"+description+"/"}>
@@ -38,7 +38,7 @@ function Products({name,description,price,image,id}) {
                
                
                
-          {/* </TransitionsModal> */}
+          </TransitionsModal>
 
         </>
     )

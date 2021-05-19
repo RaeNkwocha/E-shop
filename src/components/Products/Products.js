@@ -11,7 +11,7 @@ function Products({name,description,price,image,id}) {
           <TransitionsModal name={name} description={description} price={price} image={image}>
                
                <div key={id} className="container">
-               <Link style={{textDecoration:"none",listStyle:"none",color:"black"}} to={"/user/"+id+"/"+price+"/"+name+"/"+description+"/"}>
+               {/* <Link style={{textDecoration:"none",listStyle:"none",color:"black"}} to={"/user/"+id+"/"+price+"/"+name+"/"+description+"/"}> */}
 
                         <div className="image-holder">
                             <img src={image}></img>
@@ -20,7 +20,7 @@ function Products({name,description,price,image,id}) {
                         <p>{name}</p>
                         <p className="desc">{description}</p>
                         </div>
-                        </Link>
+                        {/* </Link> */}
                         <div className="para-flex">
                             <div className="para">
                             <p>{price}</p>

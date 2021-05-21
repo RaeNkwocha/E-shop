@@ -1,6 +1,7 @@
-import { Tabs } from '@material-ui/core';
-import React, { useEffect, useState } from 'react'
+import { Badge, Tabs } from '@material-ui/core';
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import { CartContext } from './Context';
 import Explore from './Explore';
 import './nav.css';
 import Shop from './Splash/Shop';
@@ -9,7 +10,7 @@ import Shop from './Splash/Shop';
 // import { faSearch } from '@fortawesome/free-solid-svg-icons';
 function Bottomnav() {
             const [tab, setTab]=useState(1)
-           
+            const [cart, setCart] = useContext(CartContext)           
             const toggle=(index)=>{
                 setTab(index)
                 // console.log(index)
@@ -33,9 +34,14 @@ function Bottomnav() {
                    </Link>
                <p>Explore</p>
                </div>
+
                <div className="icons-flex">
-               <button className={tab===3?"btn-active":"btn"} onClick={()=>toggle(3)}> <i class="fa fa-shopping-cart"></i> </button>
+               <Link style={{textDecoration:"none",color:"black"}} to="/Cart" >
+                   <Badge badgeContent={(cart.length)}  color="secondary"><button   className={tab===3?"btn-active":"btn"} onClick={()=>toggle(3)}> <i class="fa fa-shopping-cart"></i> </button></Badge>
+               
                <p>Cart</p>
+               </Link>
+
                </div>
                <div className="icons-flex">
                <button className={tab===4?"btn-active":"btn"} onClick={()=>toggle(4)}><i class="fa fa-heart"></i></button>

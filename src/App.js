@@ -4,6 +4,7 @@ import './App.css';
 import Splash from './Splash/Splash';
 import Bottomnav from './Bottomnav';
 import Explore from './Explore';
+import Cart from './Cart';
 import meat from "./meat.png"
 import eggs from "./eggs.png"
 import ne from "./new.png"
@@ -11,6 +12,8 @@ import ne from "./new.png"
 import Shop from './Splash/Shop';
 import Itemdetail from './Itemdetail';
 import User from './Itemdetail';
+import { useState } from 'react';
+import {  Context } from './Context';
 
 function App() {
   let user= [
@@ -28,15 +31,23 @@ function App() {
         name:"Boy",id:4,price:"$10",description:"7pcs priceg"
     },
   ]
+   
   return (
     <div className="App">
+      <Context>
+
       <Router>
+        
       <Switch>
 
          <Route path="/" exact component={Splash}></Route>
-         <Route path="/shop" exact  component={Shop}></Route>
-         {/* <Route path="/user/:id/:price/:name/:description/"><User></User></Route> */}
-        <Route path="/explore" component={Explore}></Route>
+         <Route path="/shop" exact  component={Shop}>
+           <Shop></Shop>
+         </Route>
+         <Route path="/user/:id/:price/:name/:description/"><User></User></Route>
+        <Route path="/explore" component={Explore}>
+        </Route>
+        <Route path="/cart" component={Cart}> <Cart ></Cart></Route>
  
       </Switch>
       {/* {user.map((user)=>{
@@ -48,9 +59,11 @@ function App() {
         
       })}
       <Route path="/user/:id/:price/:name/:description/:image"><User></User></Route> */}
-      <Bottomnav></Bottomnav>
+      <Bottomnav ></Bottomnav>
 
       </Router>
+      </Context>
+
     
     </div>
   );

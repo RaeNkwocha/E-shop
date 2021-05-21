@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import fruit from "./Group.png"
 import banner from "./banner.png"
 import Bannas from "./bannas.png"
@@ -12,12 +12,21 @@ import chicken from "./chicken.png"
 import ColorTextFields from './Search'
 import "./splash.css"
 import Products from '../components/Products/Products'
+import { Link } from 'react-router-dom'
+import { CartContext } from '../Context'
 
 
 function Shop() {
+    // const {setCart,cart}=props
+    const [cart, setCart] = useContext(CartContext)
     const [input, setInput]=useState("")
+    // const [cart, setCart]=useState([])
+    const addTocart=(products)=>{
+        setCart([...cart,{...products}])
+        console.log("yo")
+    }
     let fruits=[
-        {
+                {
             id:1,
             name:"Organic Bannas",
             image:Bannas,
@@ -145,18 +154,46 @@ function Shop() {
                 {/* <div className="overflow">  */}
                 <div className="product-display">
                     {fruits.map((fruit)=>{
-                        return  <Products key={fruit.id} 
-                                          name={fruit.name} 
-                                          price={fruit.price}
-                                          description={fruit.description}
-                                          image={fruit.image}
-                                          id={fruit.id}
+                        // return  <Products key={fruit.id} 
+                        //                   name={fruit.name} 
+                        //                   price={fruit.price}
+                        //                   description={fruit.description}
+                        //                   image={fruit.image}
+                        //                   id={fruit.id}
+                        //                   addTocart={addTocart}
+                        //                   fruit={fruit}
                         
                         
-                        >
+                        // >
 
 
-                        </Products>
+                        // </Products>
+                        return  <div key={fruit.id} className="container">
+                        <Link style={{textDecoration:"none",listStyle:"none",color:"black"}} to={"/user/"+fruit.id+"/"+fruit.price+"/"+fruit.name+"/"+fruit.description+"/"}>
+         
+                                 <div className="image-holder">
+                                     <img src={fruit.image}></img>
+                                 </div>
+                                 <div className="para">
+                                 <p>{fruit.name}</p>
+                                 <p className="desc">{fruit.description}</p>
+                                 </div>
+                                 </Link>
+                                 <div className="para-flex">
+                                     <div className="para">
+                                     <p>{fruit.price}</p>
+                                     </div>
+                                     <div className="para">
+                                     <div className="cart">
+                                         <button onClick={() => addTocart(fruit)} style={{width:"30px"}} >click me</button>
+                                         
+                                     </div>
+                                     </div>
+                                 
+                                 </div>
+                                 
+                         </div>
+                        
                     })}
                     </div>
 

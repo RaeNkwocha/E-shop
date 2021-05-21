@@ -4,14 +4,14 @@ import cart from "./cart.png"
 import TransitionsModal from '../../Modal/Modal'
 import { Link } from 'react-router-dom'
 
-function Products({name,description,price,image,id}) {
+function Products({name,description,price,image,id,addTocart,fruit}) {
     
     return (
         <>
-          <TransitionsModal name={name} description={description} price={price} image={image}>
+          {/* <TransitionsModal name={name} description={description} price={price} image={image}> */}
                
                <div key={id} className="container">
-               {/* <Link style={{textDecoration:"none",listStyle:"none",color:"black"}} to={"/user/"+id+"/"+price+"/"+name+"/"+description+"/"}> */}
+               <Link style={{textDecoration:"none",listStyle:"none",color:"black"}} to={"/user/"+id+"/"+price+"/"+name+"/"+description+"/"}>
 
                         <div className="image-holder">
                             <img src={image}></img>
@@ -20,14 +20,14 @@ function Products({name,description,price,image,id}) {
                         <p>{name}</p>
                         <p className="desc">{description}</p>
                         </div>
-                        {/* </Link> */}
+                        </Link>
                         <div className="para-flex">
                             <div className="para">
                             <p>{price}</p>
                             </div>
                             <div className="para">
                             <div className="cart">
-                                <img style={{width:"30px"}} src={cart}></img>
+                                <img onClick={() => addTocart(fruit)} style={{width:"30px"}} src={cart}></img>
                                 
                             </div>
                             </div>
@@ -38,7 +38,7 @@ function Products({name,description,price,image,id}) {
                
                
                
-          </TransitionsModal>
+          {/* </TransitionsModal> */}
 
         </>
     )

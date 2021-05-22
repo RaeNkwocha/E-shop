@@ -7,6 +7,11 @@ import { CartContext } from './Context';
 
 
 function Incart({name,price,description,image,id}) {
+    const [cart, setCart] = useContext(CartContext)           
+const Onremove=(id)=>{
+const newItems = cart.filter((item)=>item.id !== id)
+setCart(newItems)
+}
   
 
     return (
@@ -16,7 +21,7 @@ function Incart({name,price,description,image,id}) {
             <div className="new-layout">
                 <div className="layout-flex">
                 <h6 >{name}</h6> 
-            <img  style={{width:"12px"}} src={cross}></img>
+            <img onClick={()=>Onremove(id)}  style={{width:"12px"}} src={cross}></img>
                 </div>
         
             <p className="cart-desc">{description}</p>

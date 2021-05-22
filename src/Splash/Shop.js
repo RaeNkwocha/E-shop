@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import fruit from "./Group.png"
 import banner from "./banner.png"
 import Bannas from "./bannas.png"
@@ -19,18 +19,15 @@ import { CartContext } from '../Context'
 
 
 function Shop() {
-    // const {setCart,cart}=props
     const [cart, setCart] = useContext(CartContext)
     const [input, setInput]=useState("")
-    // const [btn, setBtn]=useState(false)
-    // const [cart, setCart]=useState([])
     const addTocart=(product)=>{
         product.inCart=true
         setCart([...cart,{...product}])
-        // console.log("yo")
     }
+  
 
-  const [fruits]=useState([
+  let [fruits]=useState([
                 {
             id:1,
             name:"Organic Bannas",
@@ -67,16 +64,18 @@ function Shop() {
     ]
   )
     if (input.length > 0){
-        fruits=fruits.filter((i)=>{
+     fruits= fruits.filter((i)=>{
           return i.name.match(input)
         })
      }
-     let best=[
+     let [best]=useState([
          {
             id:5,
             name:"Strawberries",
             image:berry,
             price:"$4.99",
+            inCart:false,
+
             description:"7pcs priceg"
          },
          {
@@ -84,6 +83,8 @@ function Shop() {
             name:"Cashew Nuts",
             image:Nuts,
             price:"$4.99",
+            inCart:false,
+
             description:"7pcs priceg"
          },
          {
@@ -91,27 +92,33 @@ function Shop() {
             name:"Tomatoes",
             image:Bannas,
             price:"$4.99",
+            inCart:false,
+
             description:"7pcs priceg"
          },
          {    id:8,
             name:"Pear",
             image:Bannas,
             price:"$4.99",
+            inCart:false,
+
             description:"7pcs priceg"
          }
      ]
+     )
     
      if(input.length > 0){
          best=best.filter((fruit)=>{
              return fruit.name.match(input)
          })
      }
-     let groceries=[
+     let [groceries]=useState([
         {
             id:9,
            name:"Beef bone",
            image:bone,
            price:"$4.99",
+           inCart:false,
            description:"7pcs priceg"
         },
         {
@@ -119,6 +126,7 @@ function Shop() {
            name:"Broiller chicken",
            image:chicken,
            price:"$4.99",
+           inCart:false,
            description:"7pcs priceg"
         },
         {
@@ -126,6 +134,7 @@ function Shop() {
            name:"Strawberries",
            image:berry,
            price:"$4.99",
+           inCart:false,
            description:"7pcs priceg"
         },
         {
@@ -133,14 +142,17 @@ function Shop() {
            name:"Strawberries",
            image:berry,
            price:"$4.99",
+           inCart:false,
            description:"7pcs priceg"
         }
     ]
+     )
     if (input.length>0){
         groceries=groceries.filter((grocery)=>{
             return grocery.name.match(input)
         })
     }
+     
 
     return (
         <>
@@ -218,16 +230,42 @@ function Shop() {
                 </section>
                 <div className="product-display">
                         {best.map((item)=>{
-                            return <Products key={item.id} name={item.name}
-                                             price={item.price}
-                                             description={item.description}
-                                             image={item.image}
-                                             id={item.id}
+                            // return <Products key={item.id} name={item.name}
+                            //                  price={item.price}
+                            //                  description={item.description}
+                            //                  image={item.image}
+                            //                  id={item.id}
                             
                             
-                            >
+                            // >
                                 
-                            </Products>
+                            // </Products>
+                            return  <div key={item.id} className="container">
+                            <Link style={{textDecoration:"none",listStyle:"none",color:"black"}} to={"/user/"+item.id+"/"+item.price+"/"+item.name+"/"+item.description+"/"}>
+             
+                                     <div className="image-holder">
+                                         <img src={item.image}></img>
+                                     </div>
+                                     <div className="para">
+                                     <p>{item.name}</p>
+                                     <p className="desc">{fruit.description}</p>
+                                     </div>
+                                     </Link>
+                                     <div className="para-flex">
+                                         <div className="para">
+                                         <p>{item.price}</p>
+                                         </div>
+                                         <div className="para">
+                                         <div className="cart">
+                                             <button disabled={item.inCart ? true:false} onClick={() => addTocart(item)}> {item.inCart?<p>in cart</p>:<img  style={{width:"30px"}} src={add}  ></img>} </button>
+            
+                                             
+                                         </div>
+                                         </div>
+                                     
+                                     </div>
+                                     {/* <img onClick={() => addTocart(fruit)} style={{width:"30px"}} src={add}  ></img> */}
+                             </div>
                         })}
                 </div>
                 <section className="flex">
@@ -262,16 +300,42 @@ function Shop() {
                 </section>
                 <div className="product-display">
                     {groceries.map((grocery)=>{
-                        return <Products key={grocery.id} name={grocery.name}
-                                         price={grocery.price}
-                                         description={grocery.description}
-                                         image={grocery.image}
-                                         id={grocery.id}
+                    //     return <Products key={grocery.id} name={grocery.name}
+                    //                      price={grocery.price}
+                    //                      description={grocery.description}
+                    //                      image={grocery.image}
+                    //                      id={grocery.id}
                        
                        
-                       >
+                    //    >
 
-                        </Products>
+                    //     </Products>
+                    return  <div key={grocery.id} className="container">
+                    <Link style={{textDecoration:"none",listStyle:"none",color:"black"}} to={"/user/"+grocery.id+"/"+grocery.price+"/"+grocery.name+"/"+grocery.description+"/"}>
+     
+                             <div className="image-holder">
+                                 <img src={grocery.image}></img>
+                             </div>
+                             <div className="para">
+                             <p>{grocery.name}</p>
+                             <p className="desc">{grocery.description}</p>
+                             </div>
+                             </Link>
+                             <div className="para-flex">
+                                 <div className="para">
+                                 <p>{grocery.price}</p>
+                                 </div>
+                                 <div className="para">
+                                 <div className="cart">
+                                     <button disabled={grocery.inCart ? true:false} onClick={() => addTocart(grocery)}> {grocery.inCart?<p>in cart</p>:<img  style={{width:"30px"}} src={add}  ></img>} </button>
+    
+                                     
+                                 </div>
+                                 </div>
+                             
+                             </div>
+                             {/* <img onClick={() => addTocart(fruit)} style={{width:"30px"}} src={add}  ></img> */}
+                     </div>
                     })}
                 </div>
                 </section>

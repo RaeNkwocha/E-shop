@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./products.css"
 import cart from "./cart.png"
 import TransitionsModal from '../../Modal/Modal'
 import { Link } from 'react-router-dom'
+import { CartContext } from '../../Context'
 
-function Products({name,description,price,image,id,addTocart,fruit}) {
-    
+function Products({name,description,price,image,id,fruit}) {
+    const addTocart=(product)=>{
+        // product.inCart=true
+        setCart([...cart,{...product}])
+    }
+    const [cart, setCart] = useContext(CartContext)
+
     return (
         <>
           {/* <TransitionsModal name={name} description={description} price={price} image={image}> */}
@@ -27,7 +33,7 @@ function Products({name,description,price,image,id,addTocart,fruit}) {
                             </div>
                             <div className="para">
                             <div className="cart">
-                                <img onClick={() => addTocart(fruit)} style={{width:"30px"}} src={cart}></img>
+                                <button onClick={() => addTocart(fruit)} style={{width:"30px"}} >add me</button>
                                 
                             </div>
                             </div>

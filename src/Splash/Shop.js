@@ -9,6 +9,8 @@ import pie from "./pie.png"
 import food from "./food.png"
 import bone from "./bone.png"
 import chicken from "./chicken.png"
+import add from "./cart.png"
+
 import ColorTextFields from './Search'
 import "./splash.css"
 import Products from '../components/Products/Products'
@@ -20,42 +22,50 @@ function Shop() {
     // const {setCart,cart}=props
     const [cart, setCart] = useContext(CartContext)
     const [input, setInput]=useState("")
+    // const [btn, setBtn]=useState(false)
     // const [cart, setCart]=useState([])
-    const addTocart=(products)=>{
-        setCart([...cart,{...products}])
-        console.log("yo")
+    const addTocart=(product)=>{
+        product.inCart=true
+        setCart([...cart,{...product}])
+        // console.log("yo")
     }
-    let fruits=[
+
+  const [fruits]=useState([
                 {
             id:1,
             name:"Organic Bannas",
             image:Bannas,
             price:"$4.99",
-            description:"7pcs priceg"
+            description:"7pcs priceg",
+            inCart:false,
         },
         {
             id:2,
             name:"Red Apple",
             image:Apples,
             price:"$4.99",
-            description:"7pcs priceg"
+            description:"7pcs priceg",
+            inCart:false,
         },
         {
             id:3,
             name:"Red Apple",
             image:Apples,
             price:"$4.99",
-            description:"7pcs priceg"
+            description:"7pcs priceg",
+            inCart:false,
         },
         {    id:4,
             name:"Red Apple",
             image:Apples,
             price:"$4.99",
-            description:"7pcs priceg"
+            description:"7pcs priceg",
+            inCart:false,
         }
         
       
     ]
+  )
     if (input.length > 0){
         fruits=fruits.filter((i)=>{
           return i.name.match(input)
@@ -185,13 +195,14 @@ function Shop() {
                                      </div>
                                      <div className="para">
                                      <div className="cart">
-                                         <button onClick={() => addTocart(fruit)} style={{width:"30px"}} >click me</button>
+                                         <button disabled={fruit.inCart ? true:false} onClick={() => addTocart(fruit)}> {fruit.inCart?<p>in cart</p>:<img  style={{width:"30px"}} src={add}  ></img>} </button>
+        
                                          
                                      </div>
                                      </div>
                                  
                                  </div>
-                                 
+                                 {/* <img onClick={() => addTocart(fruit)} style={{width:"30px"}} src={add}  ></img> */}
                          </div>
                         
                     })}

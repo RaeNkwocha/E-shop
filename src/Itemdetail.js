@@ -5,11 +5,17 @@ import heart from "./Vector (6).png"
 import group from "./Group 102.png"
 
 import {withRouter} from "react-router-dom"
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { CartContext } from './Context';
 function User(props)
 {
     console.warn(props)
     const [value,setValue]=useState(1)
+    const [fav, setFav] = useContext(CartContext)   
+    
+    const addtoFav=(products)=>{
+        setFav([...fav,{...products}])
+    }
     return(
         <div style={{marginBottom:"70px"}}>
             <div className="img-holder">
@@ -17,7 +23,7 @@ function User(props)
             </div>
             <div className="img-flex">
                     <div><h3> {props.match.params.name}</h3></div>
-                    <img src={heart}></img>
+                    <img onClick={()=>addtoFav()} src={heart}></img>
             </div>
             <p className="desc-two"> {props.match.params.description}</p>
                 <div className="img-flex">

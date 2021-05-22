@@ -14,6 +14,7 @@ import Itemdetail from './Itemdetail';
 import User from './Itemdetail';
 import { useState } from 'react';
 import {  Context } from './Context';
+import Fav from './Fav';
 
 function App() {
   let user= [
@@ -48,6 +49,7 @@ function App() {
         <Route path="/explore" component={Explore}>
         </Route>
         <Route path="/cart" component={Cart}> <Cart ></Cart></Route>
+        <Route path="/fav" component={Fav}> <Fav ></Fav></Route>
  
       </Switch>
       {/* {user.map((user)=>{

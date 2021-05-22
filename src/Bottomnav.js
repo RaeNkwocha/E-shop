@@ -10,7 +10,9 @@ import Shop from './Splash/Shop';
 // import { faSearch } from '@fortawesome/free-solid-svg-icons';
 function Bottomnav() {
             const [tab, setTab]=useState(1)
-            const [cart, setCart] = useContext(CartContext)           
+            const [cart, setCart] = useContext(CartContext)   
+            // const [fav, setFav] = useContext(CartContext)   
+        
             const toggle=(index)=>{
                 setTab(index)
                 // console.log(index)
@@ -44,8 +46,13 @@ function Bottomnav() {
 
                </div>
                <div className="icons-flex">
-               <button className={tab===4?"btn-active":"btn"} onClick={()=>toggle(4)}><i class="fa fa-heart"></i></button>
+               <Link style={{textDecoration:"none",color:"black"}} to="fav" >
+              <Badge   color="secondary">
+              <button className={tab===4?"btn-active":"btn"} onClick={()=>toggle(4)}><i class="fa fa-heart"></i></button>
+
+              </Badge>
                <p>Favourite</p>
+               </Link>
                </div>
                <div className="icons-flex">
                <button className={tab===5?"btn-active":"btn"}  onClick={()=>toggle(5)}><i class="fa fa-user"></i></button>

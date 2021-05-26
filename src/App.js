@@ -15,6 +15,11 @@ import User from './Itemdetail';
 import { useState } from 'react';
 import {  Context } from './Context';
 import Fav from './Fav';
+import Account from './Account';
+import Signup from './Signup';
+import { Container } from 'react-bootstrap';
+import { AuthProvider } from './Authcontext';
+import Login from './Login';
 
 function App() {
   let user= [
@@ -36,32 +41,28 @@ function App() {
   return (
     <div className="App">
       <Context>
-
       <Router>
-        
       <Switch>
+          <AuthProvider>
+       
+          <Route path="/" exact component={Signup}></Route>
+          <Route path="/login" component={Login}></Route>
 
-         <Route path="/" exact component={Splash}></Route>
-         <Route path="/shop" exact  component={Shop}>
-           <Shop></Shop>
-         </Route>
+        
+         <Route path="/shop"  component={Shop}></Route>
          <Route path="/user/:id/:price/:name/:description/"><User></User></Route>
-        <Route path="/explore" component={Explore}>
+         <Route path="/cart" component={Cart}> <Cart ></Cart></Route>
+         <Route path="/fav" component={Fav}> <Fav ></Fav></Route>
+        <Route path="/account" component={Account}> <Account ></Account></Route>
+         <Route path="/explore" component={Explore}>
         </Route>
-        <Route path="/cart" component={Cart}> <Cart ></Cart></Route>
-        <Route path="/fav" component={Fav}> <Fav ></Fav></Route>
+        </AuthProvider>
+
+        
  
       </Switch>
-      {/* {user.map((user)=>{
-        return(
-          <div ><Link to={"/user/"+user.id+"/"+user.price+"/"+user.name+"/"+user.description+"/"+user.image+"/"}>{user.name}</Link>
-
-          </div>
-        )
-        
-      })}
-      <Route path="/user/:id/:price/:name/:description/:image"><User></User></Route> */}
-      <Bottomnav ></Bottomnav>
+      
+      
 
       </Router>
       </Context>
@@ -72,3 +73,21 @@ function App() {
 }
 
 export default App;
+{/* {user.map((user)=>{
+        return(
+          <div ><Link to={"/user/"+user.id+"/"+user.price+"/"+user.name+"/"+user.description+"/"+user.image+"/"}>{user.name}</Link>
+
+          </div>
+        )
+        
+      })}
+      <Route path="/user/:id/:price/:name/:description/:image"><User></User></Route> */}
+
+
+       {/* <Route path="/" exact component={Shop}></Route>
+         <Route path="/user/:id/:price/:name/:description/"><User></User></Route>
+        <Route path="/explore" component={Explore}>
+        </Route>
+        <Route path="/cart" component={Cart}> <Cart ></Cart></Route>
+        <Route path="/fav" component={Fav}> <Fav ></Fav></Route>
+        <Route path="/account" component={Account}> <Account ></Account></Route> */}

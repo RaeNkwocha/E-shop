@@ -118,7 +118,6 @@ function Splash() {
     }
     return (
         <div style={{display:"flex",margin:"auto",justifyContent:"center",width:"100%"}}>
-            <Shop></Shop>
 
             
             

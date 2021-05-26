@@ -16,6 +16,7 @@ import "./splash.css"
 import Products from '../components/Products/Products'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../Context'
+import Bottomnav from '../Bottomnav'
 
 
 function Shop() {
@@ -346,7 +347,7 @@ function Shop() {
             </div> 
            
         </div>
-        
+        <Bottomnav ></Bottomnav>
         </>
     )
 }

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import Bottomnav from './Bottomnav';
 import Products from './components/Products/Products'
 import { CartContext } from './Context'
 import './explore.css';
@@ -31,7 +32,7 @@ function Cart() {
                 )
             })}
             </section>
-           
+            <Bottomnav ></Bottomnav>
         </>
     )
 }

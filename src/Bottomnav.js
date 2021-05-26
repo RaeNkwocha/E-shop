@@ -24,7 +24,7 @@ function Bottomnav() {
         <div>
             <div className="nav">
                     <div className="icons-flex">
-                        <Link to="/">
+                        <Link to="/shop">
                         <button className={tab===1?"btn-active":"btn"} onClick={()=>toggle(1)}><i class="fa fa-home"></i></button>
 
                         </Link>
@@ -55,8 +55,11 @@ function Bottomnav() {
                </Link>
                </div>
                <div className="icons-flex">
+               <Link style={{textDecoration:"none",color:"black"}} to="account" >
+
                <button className={tab===5?"btn-active":"btn"}  onClick={()=>toggle(5)}><i class="fa fa-user"></i></button>
-               <p>User</p>
+               <p>Account</p>
+               </Link>
                </div>
             </div>
 

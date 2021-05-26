@@ -11,7 +11,7 @@ function User(props)
 {
     console.warn(props)
     const [value,setValue]=useState(1)
-    const [fav, setFav] = useContext(CartContext)   
+    const [fav, setFav] = useContext(CartContext)  
     
     const addtoFav=(products)=>{
         setFav([...fav,{...products}])

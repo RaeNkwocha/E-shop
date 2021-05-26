@@ -10,6 +10,7 @@ import vegetables from "./vegetable.png"
 
 import ColorTextFields from './Splash/Search'
 import './explore.css';
+import Bottomnav from './Bottomnav'
 
 function Explore() {
     const [input,setInput]=useState('')
@@ -71,7 +72,7 @@ function Explore() {
                     </Newproducts>
                 })}
             </div>
-         
+            <Bottomnav ></Bottomnav>
         </div>
     )
 }

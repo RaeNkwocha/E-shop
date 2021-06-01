@@ -1,15 +1,13 @@
-import React, { useContext } from 'react'
-import Bottomnav from './Bottomnav'
-import { CartContext } from './Context'
+import React from "react";
+import Bottomnav from "./Bottomnav";
 
 function Fav() {
-
-    return (
-        <>
-            hey
-            <Bottomnav ></Bottomnav>
-        </>
-    )
+  return (
+    <>
+      hey
+      <Bottomnav></Bottomnav>
+    </>
+  );
 }
 
-export default Fav
+export default Fav;

@@ -2,7 +2,6 @@ import React, { useState,createContext } from 'react'
     export const CartContext = createContext()
 export const Context = props => {
     const [cart, setCart]=useState([])
-    const [fav,setFav]=useState([])
     return (   
          <CartContext.Provider value={[cart,setCart]}>
              {props.children}

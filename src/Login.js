@@ -63,50 +63,34 @@ function Login() {
         Enter your credentials to continue
       </h6>
 
-      <div>
+      <div style={{ marginLeft: "30px" }}>
         <Form onSubmit={handleSubmit}>
           <Form.Group id="e-mail">
-            {/* <TextField
-              label="Email"
-              style={{ width: "80vw", paddingBottom: "30px" }}
-            >
-              {" "}
-             
-            </TextField> */}
             <Form.Control
-              style={{ width: "80vw", padding: "12px", marginLeft: "30px" }}
+              style={{ width: "80vw", padding: "12px" }}
               type="e-mail"
               ref={emailRef}
               required
             />
           </Form.Group>
           <Form.Group id="Password">
-            {/* <TextField
-              label="password"
-              style={{ width: "80vw", paddingBottom: "30px" }}
-            >
-              {" "}
-            
-            </TextField> */}
             <Form.Control
               style={{
                 width: "80vw",
                 marginTop: "30px",
                 padding: "12px",
-                marginLeft: "30px",
               }}
               type="password"
               ref={passwordRef}
               required
             />
           </Form.Group>
-          <Form.Group id="password-confirmed"></Form.Group>
 
           <div
             style={{
               display: "flex",
-              margin: "auto",
               justifyContent: "center",
+              margin: "auto",
             }}
           >
             <button
@@ -116,7 +100,8 @@ function Login() {
                 background: "#53B175",
                 border: "none",
                 padding: "15px",
-                width: "400px",
+                marginRight: "30px",
+                width: "250px",
                 borderRadius: "15px",
                 marginTop: "8px",
                 color: "white",

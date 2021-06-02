@@ -1,4 +1,4 @@
-import { TextField } from "@material-ui/core";
+import { FormControl, Input, TextField } from "@material-ui/core";
 import React, { useRef, useState } from "react";
 import { Form, Alert } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
@@ -70,50 +70,57 @@ function Signup() {
       <div style={{ marginLeft: "30px" }}>
         <Form onSubmit={handleSubmit}>
           <Form.Group id="e-mail">
-            <TextField
-              id="e-mail"
+            <Form.Control
+              style={{ width: "80vw", padding: "12px", marginLeft: "0px" }}
               type="e-mail"
-              label="Email"
-              required
               ref={emailRef}
-              style={{ width: "80vw", paddingBottom: "30px" }}
+              required
+            />
+          </Form.Group>
+          <Form.Group id="Password">
+            <Form.Control
+              style={{
+                width: "80vw",
+                marginTop: "30px",
+                padding: "12px",
+                marginLeft: "0px",
+              }}
+              type="password"
+              ref={passwordRef}
+              required
             />
           </Form.Group>
 
-          <Form.Group id="Password">
-            <TextField
-              id="Password"
+          <Form.Group id="Password-confirmed">
+            <Form.Control
+              style={{
+                width: "80vw",
+                marginTop: "30px",
+                padding: "12px",
+                marginLeft: "0px",
+              }}
               type="password"
-              label="password"
-              ref={passwordRef}
-              required
-              style={{ width: "80vw", paddingBottom: "30px" }}
-            />
-          </Form.Group>
-          <div
-            style={{
-              //   marginTop: "7px",
-              //   marginBottom: "5px",
-              width: "100vw",
-            }}
-          ></div>
-          <Form.Group id="password-confirmed">
-            <TextField
-              id="standard-basic"
-              type="password"
-              label="password confirmation"
-              required
               ref={passwordConfirmationRef}
-              style={{ width: "80vw", paddingBottom: "15px" }}
+              required
             />
           </Form.Group>
+
           <div>
-            <div style={{ marginLeft: "30px", fontSize: "0.7rem" }}>
+            <div
+              style={{
+                marginLeft: "0px",
+                fontSize: "0.7rem",
+                display: "flex",
+                justifyContent: "center",
+                marginRight: "60px",
+                marginTop: "10px",
+              }}
+            >
               By continuing you agree to our{" "}
               <span
                 style={{
                   color: "green",
-                  fontSize: "0.9rem",
+                  fontSize: "0.7rem",
                   fontWeight: "bold",
                 }}
               >
@@ -123,7 +130,7 @@ function Signup() {
               <span
                 style={{
                   color: "green",
-                  fontSize: "0.9rem",
+                  fontSize: "0.7rem",
                   fontWeight: "bold",
                 }}
               >
@@ -134,8 +141,8 @@ function Signup() {
           <div
             style={{
               display: "flex",
-              margin: "auto",
               justifyContent: "center",
+              margin: "auto",
             }}
           >
             <button
@@ -144,7 +151,8 @@ function Signup() {
                 background: "#53B175",
                 border: "none",
                 padding: "15px",
-                width: "400px",
+                width: "250px",
+                marginRight: "30px",
                 borderRadius: "15px",
                 marginTop: "25px",
                 color: "white",

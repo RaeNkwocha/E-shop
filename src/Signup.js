@@ -108,10 +108,9 @@ function Signup() {
           <div>
             <div
               style={{
-                marginLeft: "40px",
                 fontSize: "0.5rem",
                 width: "100%",
-                marginRight: "50px",
+                marginRight: "30px",
                 marginTop: "10px",
               }}
             >

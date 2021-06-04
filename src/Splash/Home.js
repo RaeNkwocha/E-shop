@@ -47,7 +47,7 @@ function Home() {
               border: "none",
               background: "#53B175",
               color: "white",
-              width: "40%",
+              width: "50%",
               padding: "10px",
               cursor: "pointer",
             }}

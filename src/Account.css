@@ -1,0 +1,25 @@
+.profile {
+  background-color: red;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+}
+.profile-flex {
+  display: flex;
+  width: 45%;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20px;
+  margin: 20px;
+}
+.content-line {
+  width: 100%;
+  border: 1px solid #e2e2e2;
+  height: 0px;
+}
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+}

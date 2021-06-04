@@ -1,6 +1,6 @@
 import { Badge } from "@material-ui/core";
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { CartContext } from "./Context";
 import "./nav.css";
 
@@ -11,7 +11,10 @@ function Bottomnav() {
   const toggle = (index) => {
     setTab(index);
   };
-
+  const history = useHistory();
+  const handlenav = () => {
+    history.push("/Cart");
+  };
   return (
     <div>
       <div className="nav">
@@ -39,19 +42,17 @@ function Bottomnav() {
         </div>
 
         <div className="icons-flex">
-          <Link style={{ textDecoration: "none", color: "black" }} to="/Cart">
-            <Badge badgeContent={cart.length} color="secondary">
-              <button
-                className={tab === 3 ? "btn-active" : "btn"}
-                onClick={() => toggle(3)}
-              >
-                {" "}
-                <i class="fa fa-shopping-cart"></i>{" "}
-              </button>
-            </Badge>
+          <Badge badgeContent={cart.length} color="secondary">
+            <button
+              className={tab === 3 ? "btn-active" : "btn"}
+              onClick={handlenav}
+            >
+              {" "}
+              <i class="fa fa-shopping-cart"></i>{" "}
+            </button>
+          </Badge>
 
-            <p>Cart</p>
-          </Link>
+          <p>Cart</p>
         </div>
         <div className="icons-flex">
           <Link style={{ textDecoration: "none", color: "black" }} to="fav">

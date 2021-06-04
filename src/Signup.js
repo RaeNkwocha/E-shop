@@ -108,11 +108,10 @@ function Signup() {
           <div>
             <div
               style={{
-                marginLeft: "0px",
-                fontSize: "0.7rem",
-                display: "flex",
-                justifyContent: "center",
-                marginRight: "60px",
+                marginLeft: "40px",
+                fontSize: "0.5rem",
+                width: "100%",
+                marginRight: "50px",
                 marginTop: "10px",
               }}
             >
@@ -154,7 +153,7 @@ function Signup() {
                 width: "250px",
                 marginRight: "30px",
                 borderRadius: "15px",
-                marginTop: "25px",
+                marginTop: "20px",
                 color: "white",
                 fontSize: "20px",
               }}
@@ -170,7 +169,7 @@ function Signup() {
           display: "flex",
           margin: "auto",
           justifyContent: "center",
-          marginTop: "20px",
+          marginTop: "10px",
         }}
       >
         <strong> Already Have an account?</strong>

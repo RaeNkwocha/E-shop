@@ -42,14 +42,12 @@ function Home() {
           <button
             onClick={navHandler}
             style={{
-              marginLeft: "35px",
-
               borderRadius: "10px",
               outline: "none",
               border: "none",
               background: "#53B175",
               color: "white",
-              width: "250px",
+              width: "40%",
               padding: "10px",
               cursor: "pointer",
             }}

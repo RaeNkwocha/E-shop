@@ -2,9 +2,8 @@ import React, { useRef, useState } from "react";
 import { Form, Alert } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "./Authcontext";
-import fruit from "./Splash/Group.png";
 // import "./Login.css";
-
+import fruit from "../Splash/Group.png"
 // import "bootstrap/dist/css/bootstrap.min.css"
 
 function Login() {

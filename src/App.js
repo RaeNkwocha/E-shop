@@ -1,20 +1,20 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Splash from "./Splash/Splash";
-import Explore from "./Explore";
-import Cart from "./Cart";
-// import meat from "./meat.png";
-// import eggs from "./eggs.png";
-// import ne from "./new.png";
+
 
 import Shop from "./Splash/Shop";
-import User from "./Itemdetail";
-import { Context } from "./Context";
-import Fav from "./Fav";
-import Account from "./Account";
-import Signup from "./Signup";
-import { AuthProvider } from "./Authcontext";
-import Login from "./Login";
+// import User from "./Itemdetail";
+import {Context} from "./Context/Context"
+
+import Login from "./Authetification/Login"
+import Signup from "./Authetification/Signup"
+import {AuthProvider} from "./Authetification/Authcontext"
+import Cart from "./components/Cart";
+import Fav from "./components/Fav";
+import Account from "./components/Account";
+import Explore from "./components/Explore";
+
 
 function App() {
   // let user = [
@@ -58,9 +58,9 @@ function App() {
               <Route path="/login" component={Login}></Route>
 
               <Route path="/shop" component={Shop}></Route>
-              <Route path="/user/:id/:price/:name/:description/">
+              {/* <Route path="/user/:id/:price/:name/:description/">
                 <User></User>
-              </Route>
+              </Route> */}
               <Route path="/cart" component={Cart}>
                 {" "}
                 <Cart></Cart>

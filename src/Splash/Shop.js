@@ -13,10 +13,11 @@ import add from "./cart.png";
 
 import ColorTextFields from "./Search";
 import "./splash.css";
-import Products from "../components/Products/Products";
+// import Products from "../components/Products/Products";
+import Products from "../components/Products"
 import { Link } from "react-router-dom";
-import { CartContext } from "../Context";
-import Bottomnav from "../Bottomnav";
+import { CartContext } from "../Context/Context";
+import Bottomnav from "../components/Bottomnav";
 
 function Shop() {
   const [cart, setCart] = useContext(CartContext);

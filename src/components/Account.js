@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { useAuth } from "../Authetification/Authcontext";
+// import "./Account.css";
+import "../Componet Css/Account.css"
 import Bottomnav from "./Bottomnav";
-import { useAuth } from "./Authcontext";
-import "./Account.css";
 
 function Account() {
   const { currentUser } = useAuth();

@@ -1,8 +1,9 @@
 import { Badge } from "@material-ui/core";
 import React, { useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { CartContext } from "./Context";
-import "./nav.css";
+import { CartContext } from "../Context/Context";
+// import "./nav.css";
+import "../Componet Css/nav.css"
 
 function Bottomnav() {
   const [tab, setTab] = useState(1);

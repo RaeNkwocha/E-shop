@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import "./explore.css";
-import cross from "./delete.png";
-import { CartContext } from "./Context";
+// import "..Componet Css/explore.css";
+// import cross from ".Images/delete.png";
+import cross from "../Images/delete.png"
+import { CartContext } from "../Context/Context";
 
 function Incart({ name, price, description, image, id }) {
   const [cart, setCart] = useContext(CartContext);

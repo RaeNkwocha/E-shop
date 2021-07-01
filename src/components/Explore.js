@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import Newproducts from "./components/Newproducts";
-import beverages from "./beverages.png";
-import eggs from "./eggs.png";
-import meat from "./meat.png";
-// import oil from "./Oil.png"
-import oil from "./new.png";
-import snacks from "./snacks.png";
-import vegetables from "./vegetable.png";
-
-import ColorTextFields from "./Splash/Search";
-import "./explore.css";
+import Newproducts from "./Newproducts";
+import beverages from "../Images/beverages.png"
+import vegetables from "../Images/vegetable.png"
+import eggs from "../Images/eggs.png"
+import oil from "../Images/new.png"
+import meat from "../Images/meat.png"
+import snacks from "../Images/snacks.png"
+import ColorTextFields from "../Splash/Search"
+// import ColorTextFields from "./Splash/Search";
+import "../Componet Css/explore.css";
 import Bottomnav from "./Bottomnav";
 
 function Explore() {

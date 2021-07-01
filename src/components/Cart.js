@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
+import { CartContext } from "../Context/Context";
+import "../Componet Css/explore.css";
+import Incart from "../components/Incart"
 import Bottomnav from "./Bottomnav";
-import { CartContext } from "./Context";
-import "./explore.css";
-import Incart from "./Incart";
 
 function Cart() {
   const [cart] = useContext(CartContext);
